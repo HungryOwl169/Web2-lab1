@@ -1,0 +1,12 @@
+doctype html 
+html 
+    body 
+        if userData
+            ul
+                p Ticket data:
+                each item in userData
+                    li= item
+                p User name: #{user}
+        else
+            p No data available.
+
