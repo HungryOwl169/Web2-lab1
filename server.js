@@ -94,11 +94,9 @@ app.post("/get-tickets", checkJwt, async (req, res) => {
     ]);
 
     if (result.rows.length >= 3) {
-      return res
-        .status(400)
-        .json({
-          error: "Maximum number of tickets generated for the given vatin!",
-        });
+      return res.status(400).json({
+        error: "Maximum number of tickets generated for the given vatin!",
+      });
     }
 
     const newUuid = uuidv4();
@@ -108,7 +106,7 @@ app.post("/get-tickets", checkJwt, async (req, res) => {
       [newUuid, vatin, firstName, lastName, date]
     );
 
-    const ticketURL = `https://web2-lab1-hedm.onrender.com//tickets/${newUuid}`;
+    const ticketURL = `https://web2-lab1-hedm.onrender.com/tickets/${newUuid}`;
 
     QRCode.toDataURL(
       ticketURL,
