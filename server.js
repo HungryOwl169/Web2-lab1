@@ -17,7 +17,7 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: process.env.SESSION_SECRET,
-  baseURL: "http://127.0.0.1:3000",
+  baseURL: "https://web2-lab1-hedm.onrender.com/",
   clientID: "J01h0lLj24NW8JF5eP6YSwzx8pswgPK4",
   clientSecret:
     "YCB0Epi1M5tBljz_lg0jLhF0WjvZK5RfEaTNTqOa6onqAgELYnVUjL-xpjTDqPQw",
@@ -108,7 +108,7 @@ app.post("/get-tickets", checkJwt, async (req, res) => {
       [newUuid, vatin, firstName, lastName, date]
     );
 
-    const ticketURL = `http://127.0.0.1:3000/tickets/${newUuid}`;
+    const ticketURL = `https://web2-lab1-hedm.onrender.com//tickets/${newUuid}`;
 
     QRCode.toDataURL(
       ticketURL,
@@ -128,5 +128,5 @@ app.post("/get-tickets", checkJwt, async (req, res) => {
 });
 
 app.listen(3000, () => {
-  console.log("Server running at http://127.0.0.1:3000/");
+  console.log("Server running at https://web2-lab1-hedm.onrender.com/");
 });
