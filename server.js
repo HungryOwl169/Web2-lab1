@@ -127,6 +127,7 @@ app.post("/get-tickets", checkJwt, async (req, res) => {
   }
 });
 
-app.listen(3000, () => {
-  console.log("Server running at https://web2-lab1-hedm.onrender.com/");
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server running on port {port}`);
 });
